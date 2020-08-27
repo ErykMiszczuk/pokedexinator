@@ -1,0 +1,16 @@
+.app_content__area {
+    height: 87vh;
+    overflow-x: auto;
+    padding: 1rem;
+    flex-grow: 1;
+    box-shadow: -2px -2px 9px 0px #3b3b3b;
+    background-color: var(--colorBackgroundLight);
+    --notchSize: 1rem;
+    clip-path: polygon(var(--notchSize) 0%, 100% 0, 100% 100%, 0 100%, 0% var(--notchSize));
+}
+
+.shadow_wrapper {
+    display: flex;
+    flex-grow: 1;
+    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+}

@@ -1,0 +1,25 @@
+:root {
+  --colorPrimary: #EF5350;
+  --colorPrimaryLight: #ff867a;
+  --colorPrimaryDark: #b61825;
+  --colorSecondary: #26C6DA;
+  --colorSecondaryLight: #6ff9ff;
+  --colorSecondaryDark: #0095a8;
+  --colorTextLight: #ffffff;
+  --colorTextDark: #222222;
+  --colorBackgroundLight: #ffffff;
+  --colorBackgroundShadow: #333333;
+}
+
+.App {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  background-color: var(--colorPrimary);
+}
+
+.App-link {
+  color: var(--colorSecondary);
+}
+
+

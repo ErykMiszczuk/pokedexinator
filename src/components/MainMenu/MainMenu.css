@@ -1,0 +1,11 @@
+.main_menu {
+    width: 20%;
+    height: 100vh;
+}
+
+.app_name {
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 2rem;
+    color: var(--colorTextLight);
+}

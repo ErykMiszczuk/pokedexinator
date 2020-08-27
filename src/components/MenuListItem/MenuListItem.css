@@ -1,0 +1,7 @@
+.menu_list__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0.5rem;
+    color: var(--colorTextLight);
+}
