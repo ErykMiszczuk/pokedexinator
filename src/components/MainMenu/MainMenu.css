@@ -8,4 +8,6 @@
     padding: 0.5rem;
     font-size: 2rem;
     color: var(--colorTextLight);
+    writing-mode: vertical-lr;
+    text-transform: uppercase;
 }

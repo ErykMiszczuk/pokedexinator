@@ -1,0 +1,41 @@
+.pokemon_type {
+    display: inline-block;
+    border-radius: 1rem;
+    text-align: center;
+    margin: 0.25rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    padding-bottom: 0.25rem;
+}
+
+.pokemon_type--normal {
+    background-color: var(--colorPrimaryLight);
+}
+
+.pokemon_type--fire {
+    background-color: #ff774e;
+}
+
+.pokemon_type--flying {
+    color: var(--colorTextLight);
+    background: rgb(120,180,255);
+    background: linear-gradient(180deg, rgba(120,180,255,1) 50%, rgba(86,97,113,1) 50%);
+}
+
+.pokemon_type--water {
+    color: var(--colorTextLight);
+    background-color: royalblue;
+}
+
+.pokemon_type--bug {
+    color: var(--colorTextLight);
+    background-color: green;
+}
+
+.pokemon_type--grass {
+    background-color: greenyellow;
+}
+
+.pokemon_type--poison {
+    background-color: plum;
+}

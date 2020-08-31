@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './PokemonListItem.css';
+import PokemonType from '../PokemonType/PokemonType';
 
 function PokemonListItem(props) {
     const [pokemonData, setPokemonData] = useState('');
@@ -17,11 +18,17 @@ function PokemonListItem(props) {
                     <span>{ props.pokemonDetails.name }</span>
                 </div>
                 <div className="pokemon_image">
-                    { pokemonData ? <img className="full_image" src={pokemonData.sprites.front_default} /> : null }
+                    { pokemonData 
+                        ? <img 
+                            className="full_image" 
+                            src={pokemonData.sprites.front_default} 
+                            alt={props.pokemonDetails.name} 
+                          /> 
+                        : null }
                 </div>
                 <div className="pokemon_stats">
                     { pokemonData
-                        ? pokemonData.types.map(el => (<span className="pokemon_type">{el.type.name}</span>))
+                        ? pokemonData.types.map(el => (<PokemonType pokemonType={el} />))
                         : null
                     }
                 </div>

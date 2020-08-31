@@ -9,6 +9,7 @@
 }
 
 .pokemon_name {
+    padding-left: var(--notchBigSize);
     height: 30vh;
     width: 15vh;
     position: relative;
@@ -24,24 +25,13 @@
 .pokemon_image {
     height: 30vh;
     width: 30vh;
-    background-color: var(--colorPrimaryLight);
 }
 
 .pokemon_stats {
     height: 2rem;
-    border: 1px solid var(--colorBackgroundShadow);
+    border: 3px solid var(--colorPrimaryDark);
     width: 100%;
-}
-
-.pokemon_type {
-    display: inline-block;
-    background-color: var(--colorPrimaryLight);
-    border-radius: 1rem;
-    text-align: center;
-    margin: 0.25rem;
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
-    padding-bottom: 0.25rem;
+    clip-path: polygon(var(--notchBigSize) 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0% 100%, 0 var(--notchBigSize));
 }
 
 .full_image {
