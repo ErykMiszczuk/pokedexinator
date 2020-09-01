@@ -4,8 +4,7 @@ import './PokemonType.css';
 function PokemonType(props) {
     return (
         <span 
-            className={"pokemon_type pokemon_type--" + props.pokemonType.type.name} 
-            key={props.pokemonType.type.url}
+            className={"pokemon_type pokemon_type--" + props.pokemonType.type.name}
         >
             {props.pokemonType.type.name}
         </span>

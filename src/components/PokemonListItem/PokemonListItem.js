@@ -28,7 +28,7 @@ function PokemonListItem(props) {
                 </div>
                 <div className="pokemon_stats">
                     { pokemonData
-                        ? pokemonData.types.map(el => (<PokemonType pokemonType={el} />))
+                        ? pokemonData.types.map(el => (<PokemonType pokemonType={el} key={el.type.url}/>))
                         : null
                     }
                 </div>

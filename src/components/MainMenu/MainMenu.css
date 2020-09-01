@@ -1,6 +1,5 @@
 .main_menu {
-    width: 20%;
-    height: 100vh;
+    grid-area: menu_left;
 }
 
 .app_name {

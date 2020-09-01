@@ -13,14 +13,19 @@
 }
 
 .App {
-  display: flex;
-  flex-direction: row;
+  overflow: hidden;
   height: 100vh;
   background-color: var(--colorPrimary);
+  display: grid;
+  grid-template-columns: 10% 1fr;
+  grid-template-rows: 10vh 90vh;
+  gap: 1px 1px;
+  grid-template-areas:
+    "menu_left top_bar"
+    "menu_left main_content";
 }
 
 .App-link {
   color: var(--colorSecondary);
 }
-
 

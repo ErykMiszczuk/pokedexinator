@@ -2,13 +2,15 @@ import React from 'react';
 import './App.css';
 
 import MainMenu from './components/MainMenu/MainMenu';
-import AppContent from './components/AppContent/AppContent';
+import AppContentTopBar from './components/AppContentTopBar/AppContentTopBar';
+import AppContentArea from './components/AppContentArea/AppContentArea';
 
 function App() {
   return (
     <div className="App">
       <MainMenu />
-      <AppContent />
+      <AppContentTopBar />
+      <AppContentArea />
     </div>
   );
 }
