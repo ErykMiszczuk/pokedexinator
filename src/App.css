@@ -17,7 +17,7 @@
   height: 100vh;
   background-color: var(--colorPrimary);
   display: grid;
-  grid-template-columns: 10% 1fr;
+  grid-template-columns: minmax(60px, 10%) 1fr;
   grid-template-rows: 10vh 90vh;
   gap: 1px 1px;
   grid-template-areas:
