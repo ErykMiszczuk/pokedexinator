@@ -25,7 +25,7 @@ function ContentPagination(props) {
     useEffect(() => {
         page === 0 ? setPrevPageDisabled(true) : setPrevPageDisabled(false);
         page === props.count ? setNextPageDisabled(true) : setNextPageDisabled(false);
-    }, [page])
+    }, [page, props.count])
 
     return (
         <div className="content_pagination">

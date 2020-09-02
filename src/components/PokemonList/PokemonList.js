@@ -1,13 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useReducer } from 'react';
 import './PokemonList.css';
 import PokemonListItem from '../PokemonListItem/PokemonListItem';
 import ContentPagination from '../ContentPagination/ContentPagination';
 import useEventListener from '../../hooks/useEventListener';
 
+const initialState = []
+
+function reducer(state, action) {
+    switch (action.type) {
+        case 'merge':
+            return [...state, action.data];
+        default:
+            return state;
+    }
+}
+
 function PokemonList(props) {
 
     const [pokemonList, setPokemonList] = useState({});
     const [offset, setOffset] = useState(0);
+    const [pokemonTypesList, setPokemonTypesList] = useState({});
+    const [state, dispatch] = useReducer(reducer, initialState);
 
     useEventListener('PAGE_CHANGED', (e) => {
         setOffset(e.detail.page)
@@ -18,6 +31,22 @@ function PokemonList(props) {
             .then(res => res.json())
             .then(data => setPokemonList(data));
     }, [offset])
+
+    useEffect(() => {
+        fetch(`https://pokeapi.co/api/v2/type/`)
+            .then(res => res.json())
+            .then(data => setPokemonTypesList(data))
+    }, [])
+
+    useEffect(() => {
+        if (pokemonTypesList.results) {
+            pokemonTypesList.results.forEach(el => {
+                fetch(el.url)
+                    .then(res => res.json())
+                    .then(data => dispatch({type: 'merge', data}))
+            })
+        }
+    }, [pokemonTypesList])
 
     return (
         <>
