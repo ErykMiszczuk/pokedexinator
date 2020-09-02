@@ -18,8 +18,8 @@
 
 .pokemon_type--flying {
     color: var(--colorTextLight);
-    background: rgb(120,180,255);
-    background: linear-gradient(180deg, rgba(120,180,255,1) 50%, rgba(86,97,113,1) 50%);
+    background: #78b4ff;
+    background: linear-gradient(180deg, #78b4ff 50%, #566171 50%);
 }
 
 .pokemon_type--water {
@@ -38,4 +38,60 @@
 
 .pokemon_type--poison {
     background-color: plum;
+}
+
+.pokemon_type--ground {
+    background: #8f4e1d;
+    background: linear-gradient(180deg, #8f4e1d 50%, #543004 50%);
+    color: var(--colorTextLight);
+}
+
+.pokemon_type--psychic {
+    background: #a832d6;
+    background: linear-gradient(45deg, #a832d6 50%, #c838c5 50%);
+    color: var(--colorTextLight);
+}
+
+.pokemon_type--rock {
+    background-color: #677c9b;
+    color: var(--colorTextLight);
+}
+
+.pokemon_type--electric {
+    background-color: #ffed4e;
+}
+
+.pokemon_type--fighting {
+    background: #ff3737;
+    background: linear-gradient(45deg, #ff3737 50%, #3838c8 50%);
+    color: var(--colorTextLight); 
+}
+
+.pokemon_type--steel {
+    background: #7b94c3;
+    background: linear-gradient(45deg, #7b94c3 20%, #6169d6 80%);
+}
+
+.pokemon_type--ice {
+    background: #a0d0ff;
+    background: linear-gradient(180deg, #a0d0ff 20%, #7d85ff 80%); 
+}
+
+.pokemon_type--ghost {
+    background: #ffffff;
+    background: radial-gradient(circle, #ffffff 40%, #dfdfdf 100%); 
+}
+
+.pokemon_type--fairy {
+    background-color: #ffadad;
+}
+
+.pokemon_type--dragon {
+    background: #ffe277;
+    background: linear-gradient(180deg, #ffe277 50%, #ffc400 50%); 
+}
+
+.pokemon_type--dark {
+    background-color: #340041;
+    color: var(--colorTextLight);
 }

@@ -1,4 +1,5 @@
-.content_pagination__change_page_button {
+.content_pagination__change_page_button--enabled,
+.content_pagination__change_page_button--disabled {
     display: block;
     width: 3rem;
     height: 3rem;
@@ -7,6 +8,12 @@
     background-color: var(--colorSecondary);
     border: 1px solid var(--colorSecondary);
     font-size: 1.5rem;
+}
+
+.content_pagination__change_page_button--disabled {
+    color: var(--colorTextDark);
+    background-color: var(--colorDisabled);
+    border-color: var(--colorDisabled);
 }
 
 .content_pagination__page_number {
