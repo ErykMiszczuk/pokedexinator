@@ -1,0 +1,8 @@
+.content_pagination {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 1rem;
+    justify-content: center;
+    align-items: center;
+}

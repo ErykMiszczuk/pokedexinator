@@ -26,7 +26,7 @@ function PokemonList(props) {
                     pokemonList.results ? pokemonList.results.map(el => <PokemonListItem pokemonDetails={el} key={el.url}/>) : null
                 }
             </ul>
-            <ContentPagination />
+            <ContentPagination count={pokemonList.count}/>
         </>
     )
 }

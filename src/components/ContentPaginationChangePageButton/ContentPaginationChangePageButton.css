@@ -1,0 +1,20 @@
+.content_pagination__change_page_button {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    color: var(--colorTextLight);
+    background-color: var(--colorSecondary);
+    border: 1px solid var(--colorSecondary);
+    font-size: 1.5rem;
+}
+
+.content_pagination__page_number {
+    display: block;
+    padding: 1rem;
+    margin: 0.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid var(--colorSecondary);
+}
