@@ -5,8 +5,9 @@ function ContentPagination(props) {
     const [page, setPage] = useState(0);
 
     const memorizedCallback = useCallback(() => {
-        setPage(page + 1);
-        eventEmitter("PAGE_CHANGED", { page });
+        const newPage = page + 1;
+        setPage(newPage);
+        eventEmitter("PAGE_CHANGED", { page: newPage });
     }, [page])
 
     return (
