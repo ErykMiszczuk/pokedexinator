@@ -21,10 +21,22 @@ function PokemonList(props) {
     const [offset, setOffset] = useState(0);
     const [pokemonTypesList, setPokemonTypesList] = useState({});
     const [state, dispatch] = useReducer(reducer, initialState);
+    const [isPokemonDetailShowed, setIsPokemonDetailShowed] = useState(false);
+    const [pokemonDetails, setPokemonDetails] = useState({});
 
     useEventListener('PAGE_CHANGED', (e) => {
         setOffset(e.detail.page)
     });
+
+    useEventListener('SHOW_POKEMON_DETAILS', (e) => {
+        setPokemonDetails(e.detail);
+        setIsPokemonDetailShowed(true);
+    })
+
+    useEventListener('HIDE_POKEMON_DETAILS', () => {
+        setPokemonDetails({});
+        setIsPokemonDetailShowed(false);
+    })
 
     useEffect(() => {
         fetch(`https://pokeapi.co/api/v2/pokemon/?limit=24&offset=${offset * 24}`)
@@ -49,14 +61,16 @@ function PokemonList(props) {
     }, [pokemonTypesList])
 
     return (
-        <>
-            <ul className="pokemon_list">
-                {
-                    pokemonList.results ? pokemonList.results.map(el => <PokemonListItem pokemonDetails={el} key={el.url}/>) : null
-                }
-            </ul>
-            <ContentPagination count={pokemonList.count}/>
-        </>
+        isPokemonDetailShowed 
+            ? <span>Pokemon Details</span>
+            : <>
+                <ul className="pokemon_list">
+                    {
+                        pokemonList.results ? pokemonList.results.map(el => <PokemonListItem pokemonDetails={el} key={el.url}/>) : null
+                    }
+                </ul>
+                <ContentPagination count={pokemonList.count}/>
+              </>
     )
 }
 

@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './PokemonListItem.css';
 import PokemonType from '../PokemonType/PokemonType';
+import eventEmitter from '../../functions/eventEmitter';
 
 function PokemonListItem(props) {
     const [pokemonData, setPokemonData] = useState('');
@@ -11,8 +12,14 @@ function PokemonListItem(props) {
             .then(data => setPokemonData(data))
     }, [props.pokemonDetails.url])
 
+    const showPokemonDetails = useCallback(() => {
+        eventEmitter('SHOW_POKEMON_DETAILS', pokemonData);
+    }, [pokemonData])
+
     return (
-        <li className="pokemon_list__item">
+        <li className="pokemon_list__item"
+            onClick={showPokemonDetails}
+        >
             <div className="pokemon_details">
                 <div className="pokemon_name">
                     <span>{ props.pokemonDetails.name }</span>
