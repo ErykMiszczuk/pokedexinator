@@ -20,7 +20,7 @@ function PokemonListItem(props) {
         <li className="pokemon_list__item"
             onClick={showPokemonDetails}
         >
-            <div className="pokemon_details">
+            <div className="pokemon_description">
                 <div className="pokemon_name">
                     <span>{ props.pokemonDetails.name }</span>
                 </div>

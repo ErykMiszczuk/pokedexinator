@@ -3,6 +3,7 @@ import './PokemonList.css';
 import PokemonListItem from '../PokemonListItem/PokemonListItem';
 import ContentPagination from '../ContentPagination/ContentPagination';
 import useEventListener from '../../hooks/useEventListener';
+import PokemonDetails from '../PokemonDetails/PokemonDetails';
 
 const initialState = []
 
@@ -62,7 +63,7 @@ function PokemonList(props) {
 
     return (
         isPokemonDetailShowed 
-            ? <span>Pokemon Details</span>
+            ? <PokemonDetails pokemonData={pokemonDetails} />
             : <>
                 <ul className="pokemon_list">
                     {
