@@ -1,0 +1,31 @@
+.pokemon_details {
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pokemon_details__name {
+    font-size: 2rem;
+    border-bottom: 2px solid var(--colorPrimaryDark);
+    width: 100%;
+    text-transform: capitalize;
+    height: 3rem;
+}
+
+.pokemon_details__gallery {
+    width: 30%;
+    min-height: 240px;
+}
+
+.pokemon_details__image {
+    height: 240px;
+    width: 240px;
+}
+
+.pokemon_details__stats {
+    width: 30%;
+}
+
+.pokemon_details__types {
+    width: 30%;
+}

@@ -63,7 +63,10 @@ function PokemonList(props) {
 
     return (
         isPokemonDetailShowed 
-            ? <PokemonDetails pokemonData={pokemonDetails} />
+            ? <PokemonDetails 
+                pokemonData={pokemonDetails} 
+                pokemonTypes={state}
+              />
             : <>
                 <ul className="pokemon_list">
                     {
