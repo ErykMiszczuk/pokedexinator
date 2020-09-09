@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import './PokemonDetails.css';
 import PokemonType from '../PokemonType/PokemonType';
+import PokemonDetailsDamageRelations from '../PokemonDetailsDamageRelations/PokemonDetailsDamageRelations';
 
 function PokemonDetails(props) {
 
-    const [pokemonTypesData, setPokemonTypesData] = useState({})
+    const [pokemonTypesData, setPokemonTypesData] = useState('')
 
     useEffect(() => {
-        let pokemonTypes = props.pokemonData.types.map(el => el.type.name)
-        let typesData = pokemonTypes.map(el => props.pokemonTypes.filter(type => type.name === el)).flat()
+        let currentPokemonTypes = props.pokemonData.types.map(el => el.type.name)
+        let currentPokemonTypesDetailsData = currentPokemonTypes.map(el => props.pokemonTypes.filter(type => type.name === el)).flat()
 
-        setPokemonTypesData(typesData);
+        setPokemonTypesData(currentPokemonTypesDetailsData);
     }, [props.pokemonData.types, props.pokemonTypes])
 
 
@@ -49,6 +50,7 @@ function PokemonDetails(props) {
                     { props.pokemonData.moves.map(el => (<li key={el.move.url}> { el.move.name }</li>))}
                 </ul>
             </div>
+            { pokemonTypesData !== '' ? <PokemonDetailsDamageRelations damageRelations={pokemonTypesData} /> : null }
         </div>
     )
 }
