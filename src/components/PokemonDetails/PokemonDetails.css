@@ -88,3 +88,47 @@
     border-bottom: 2px solid var(--colorPrimaryDark);
     margin-bottom: 0.5rem;
 }
+
+@media (max-width: 1000px) {
+    .pokemon_details__gallery {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .pokemon_details__image {
+        width: 240px;
+        margin: auto;
+    }
+
+    .pokemon_details__stats {
+        width: 50%;
+    }
+
+    .pokemon_details__damage_relations {
+        width: 50%;
+    }
+}
+
+@media (max-width: 500px) {
+    .pokemon_details {
+        flex-direction: column;
+    }
+
+    .pokemon_details__gallery {
+        width: 100%;
+    }
+
+    .pokemon_details__image {
+        width: 240px;
+        margin: auto;
+    }
+
+    .pokemon_details__stats {
+        width: 100%;
+    }
+
+    .pokemon_details__damage_relations {
+        width: 100%;
+    }
+}

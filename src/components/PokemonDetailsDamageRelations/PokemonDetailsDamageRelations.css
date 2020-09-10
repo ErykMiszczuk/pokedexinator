@@ -1,3 +1,15 @@
 .pokemon_details__damage_relations {
     width: 30%;
 }
+
+@media (max-width: 1000px) {
+    .pokemon_details__damage_relations {
+        width: 50%;
+    }
+}
+
+@media (max-width: 500px) {
+    .pokemon_details__damage_relations {
+        width: 100%;
+    }
+}
