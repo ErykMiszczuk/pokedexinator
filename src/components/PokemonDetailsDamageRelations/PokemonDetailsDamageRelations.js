@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PokemonType from '../PokemonType/PokemonType';
+import './PokemonDetailsDamageRelations.css';
 import * as R from 'ramda';
 
 function PokemonDetailsDamageRelations(props) {
@@ -41,6 +42,9 @@ function PokemonDetailsDamageRelations(props) {
 
         return (
             <div className="pokemon_details__damage_relations">
+                <div className="pokemon_details__header">
+                    Damage relations
+                </div>
                 <div className="damage_relations__double_damage_from">
                     <div>Receive double damage</div>
                     { damageRelations.double_damage_from.map((el, i) => <PokemonType pokemonType={{type: el}} key={`${el}${i}`} />) }

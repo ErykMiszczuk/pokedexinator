@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './PokemonDetails.css';
 import PokemonType from '../PokemonType/PokemonType';
 import PokemonDetailsDamageRelations from '../PokemonDetailsDamageRelations/PokemonDetailsDamageRelations';
+import eventEmitter from '../../functions/eventEmitter';
 
 function PokemonDetails(props) {
 
@@ -12,23 +13,25 @@ function PokemonDetails(props) {
         let currentPokemonTypesDetailsData = currentPokemonTypes.map(el => props.pokemonTypes.filter(type => type.name === el)).flat()
 
         setPokemonTypesData(currentPokemonTypesDetailsData);
-    }, [props.pokemonData.types, props.pokemonTypes])
+    }, [props.pokemonData.types, props.pokemonTypes]);
+
+    const goBack = useCallback(() => {
+        eventEmitter("SHOW_POKEMON_LIST");
+    }, [])
 
 
     return (
         <div className="pokemon_details">
-            <div className="pokemon_details__name"> 
-                { props.pokemonData.name } 
-            </div>
-            <div className="pokemon_details__stats">
-                <table>
-                    <thead>
-                        <tr><th>Stat</th><th>Value</th></tr>
-                    </thead>
-                    <tbody>
-                        { props.pokemonData.stats.map(el => (<tr key={el.stat.url}><td>{ el.stat.name }</td><td>{ el.base_stat }</td></tr>)) }
-                    </tbody>
-                </table>
+            <div className="pokemon_details__main_header">
+                <div className="pokemon_details__name"> 
+                    { props.pokemonData.name } 
+                </div>
+                <div
+                    onClick={goBack}
+                    className="button"
+                >
+                    Back
+                </div>
             </div>
             <div className="pokemon_details__gallery">
                 <img
@@ -37,20 +40,27 @@ function PokemonDetails(props) {
                     alt={props.pokemonData.name}
                 />
             </div>
-            <div className="pokemon_details__types">
-                <div>Type</div>
+            <div className="pokemon_details__stats">
+                <div className="pokemon_details__header">
+                    Characteristics
+                </div>
                 { props.pokemonData.types.map(el => (<PokemonType pokemonType={el} key={el.type.url}/>)) }
-            </div>
-            <div className="pokemon_details__damage_relations">
-
-            </div>
-            <div className="pokemon_details__moves"> 
-                <div>Moves</div>
-                <ul className="pokemon_details__moves_list">
-                    { props.pokemonData.moves.map(el => (<li key={el.move.url}> { el.move.name }</li>))}
-                </ul>
+                <table className="data_table">
+                    {/* <thead className="data_table__header">
+                        <tr><th>Stat</th><th>Value</th></tr>
+                    </thead> */}
+                    <tbody>
+                        { props.pokemonData.stats.map(el => (<tr className="data_table__data_row" key={el.stat.url}><td>{ el.stat.name }</td><td>{ el.base_stat }</td></tr>)) }
+                    </tbody>
+                </table>
             </div>
             { pokemonTypesData !== '' ? <PokemonDetailsDamageRelations damageRelations={pokemonTypesData} /> : null }
+            <div className="pokemon_details__moves"> 
+                <div className="pokemon_details__header">Moves</div>
+                <ul className="moves_list">
+                    { props.pokemonData.moves.map(el => (<li className="moves_list__item" key={el.move.url}> { el.move.name }</li>))}
+                </ul>
+            </div>
         </div>
     )
 }

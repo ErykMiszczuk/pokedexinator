@@ -6,10 +6,10 @@
 
 .pokemon_details__name {
     font-size: 2rem;
-    border-bottom: 2px solid var(--colorPrimaryDark);
     width: 100%;
     text-transform: capitalize;
     height: 3rem;
+    display: flex;
 }
 
 .pokemon_details__gallery {
@@ -18,8 +18,7 @@
 }
 
 .pokemon_details__image {
-    height: 240px;
-    width: 240px;
+    width: 110%;
 }
 
 .pokemon_details__stats {
@@ -28,4 +27,64 @@
 
 .pokemon_details__types {
     width: 30%;
+}
+
+.data_table {
+    text-align: left;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data_table__header {
+    color: var(--colorTextLight);
+    background-color: var(--colorPrimaryDark);
+}
+
+.data_table td {
+    text-transform: uppercase;
+    padding: 0.25rem 0.5rem;
+}
+
+.pokemon_details__moves {
+    width: 100%;
+}
+
+.moves_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pokemon_details__header {
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--colorPrimaryDark);
+    width: 100%;
+    text-transform: capitalize;
+    height: 2rem;
+}
+
+.moves_list__item {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    margin: 0.5rem;
+    border: 1px solid var(--colorPrimaryDark);
+    border-radius: 1rem;
+    text-transform: capitalize;
+}
+
+.button {
+    padding: 0.5rem 0.75rem;
+    background-color: var(--colorSecondary);
+    color: var(--colorTextLight);
+    cursor: pointer;
+    text-transform: uppercase;
+    clip-path: polygon(var(--notchBigSize) 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0% 100%, 0 var(--notchBigSize));
+}
+
+.pokemon_details__main_header {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    border-bottom: 2px solid var(--colorPrimaryDark);
+    margin-bottom: 0.5rem;
 }

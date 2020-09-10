@@ -32,12 +32,17 @@ function PokemonList(props) {
     useEventListener('SHOW_POKEMON_DETAILS', (e) => {
         setPokemonDetails(e.detail);
         setIsPokemonDetailShowed(true);
+    });
+
+    useEventListener('SHOW_POKEMON_LIST', (e) => {
+        setIsPokemonDetailShowed(false);
+        setPokemonDetails({});
     })
 
     useEventListener('HIDE_POKEMON_DETAILS', () => {
         setPokemonDetails({});
         setIsPokemonDetailShowed(false);
-    })
+    });
 
     useEffect(() => {
         fetch(`https://pokeapi.co/api/v2/pokemon/?limit=24&offset=${offset * 24}`)
