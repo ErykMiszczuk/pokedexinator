@@ -2,6 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react';
 import './ContentPagination.css';
 import eventEmitter from '../../functions/eventEmitter';
 import ContentPaginationChangePageButton from '../ContentPaginationChangePageButton/ContentPaginationChangePageButton';
+import { setScrollPos } from '../../functions/scrollPos';
 
 function ContentPagination(props) {
     const [page, setPage] = useState(0);
@@ -12,13 +13,15 @@ function ContentPagination(props) {
         const newPage = page + 1;
         if (newPage > props.count) return; 
         setPage(newPage);
+        setScrollPos(".app_content__area", {Y: 0, X: 0});
         eventEmitter("PAGE_CHANGED", { page: newPage });
     }, [page, props.count])
-
+    
     const prevPage = useCallback(() => {
         const newPage = page - 1;
         if (newPage < 0) return;
         setPage(newPage);
+        setScrollPos(".app_content__area", {Y: 0, X: 0});
         eventEmitter("PAGE_CHANGED", { page: newPage });
     }, [page])
 
