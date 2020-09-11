@@ -1,4 +1,4 @@
-function getScrollPos(el) {
+function getElementScrollPos(el) {
     const element = document.querySelector(el);
     return {
         X: element.scrollLeft,
@@ -6,7 +6,7 @@ function getScrollPos(el) {
     }
 }
 
-function setScrollPos(el, scrollPos) {
+function setElementScrollPos(el, scrollPos) {
     const element = document.querySelector(el);
     element.scrollTo({
         top: scrollPos.Y,
@@ -16,6 +16,6 @@ function setScrollPos(el, scrollPos) {
 }
 
 export {
-    getScrollPos,
-    setScrollPos
+    getElementScrollPos,
+    setElementScrollPos
 }

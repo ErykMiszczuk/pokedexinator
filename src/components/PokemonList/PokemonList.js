@@ -4,6 +4,7 @@ import PokemonListItem from '../PokemonListItem/PokemonListItem';
 import ContentPagination from '../ContentPagination/ContentPagination';
 import useEventListener from '../../hooks/useEventListener';
 import PokemonDetails from '../PokemonDetails/PokemonDetails';
+import { getElementScrollPos, setElementScrollPos } from '../../functions/scrollPos';
 
 const initialState = []
 
@@ -24,25 +25,28 @@ function PokemonList(props) {
     const [state, dispatch] = useReducer(reducer, initialState);
     const [isPokemonDetailShowed, setIsPokemonDetailShowed] = useState(false);
     const [pokemonDetails, setPokemonDetails] = useState({});
+    const [scrollPosition, setScrollPostion] = useState('');
 
     useEventListener('PAGE_CHANGED', (e) => {
-        setOffset(e.detail.page)
+        setOffset(e.detail.page);
     });
 
     useEventListener('SHOW_POKEMON_DETAILS', (e) => {
+        setScrollPostion(getElementScrollPos(".app_content__area"));
         setPokemonDetails(e.detail);
         setIsPokemonDetailShowed(true);
+        window.requestAnimationFrame(() => {
+            setElementScrollPos(".app_content__area", {Y: 0, X: 0});
+        })
     });
-
+    
     useEventListener('SHOW_POKEMON_LIST', (e) => {
         setIsPokemonDetailShowed(false);
         setPokemonDetails({});
+        window.requestAnimationFrame(() => {
+            setElementScrollPos(".app_content__area", scrollPosition);
+        })
     })
-
-    useEventListener('HIDE_POKEMON_DETAILS', () => {
-        setPokemonDetails({});
-        setIsPokemonDetailShowed(false);
-    });
 
     useEffect(() => {
         fetch(`https://pokeapi.co/api/v2/pokemon/?limit=24&offset=${offset * 24}`)
