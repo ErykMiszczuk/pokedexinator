@@ -11,6 +11,8 @@ function ContentPagination(props) {
     const [prevPageDisabled, setPrevPageDisabled] = useState(true);
     const [nextPageDisabled, setNextPageDisabled] = useState(false);
 
+    useEffect(() => setPage(props.offset), [props.offset]);
+
     const nextPage = useCallback(() => {
         const newPage = page + 1;
         if (newPage > props.count) return; 
