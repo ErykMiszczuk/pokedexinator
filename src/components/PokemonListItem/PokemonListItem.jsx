@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './PokemonListItem.css';
-import PokemonType from '../PokemonType/PokemonType';
+
+import PokemonType from '../PokemonType/PokemonType.jsx';
+
 import eventEmitter from '../../functions/eventEmitter';
 
 function PokemonListItem(props) {

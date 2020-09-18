@@ -1,9 +1,11 @@
 import React, { useEffect, useState, useReducer } from 'react';
 import './PokemonList.css';
-import PokemonListItem from '../PokemonListItem/PokemonListItem';
-import ContentPagination from '../ContentPagination/ContentPagination';
+
+import PokemonListItem from '../PokemonListItem/PokemonListItem.jsx';
+import ContentPagination from '../ContentPagination/ContentPagination.jsx';
+import PokemonDetails from '../PokemonDetails/PokemonDetails.jsx';
+
 import useEventListener from '../../hooks/useEventListener';
-import PokemonDetails from '../PokemonDetails/PokemonDetails';
 import { getElementScrollPos, setElementScrollPos } from '../../functions/scrollPos';
 
 const initialState = []

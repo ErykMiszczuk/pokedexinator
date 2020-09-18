@@ -1,6 +1,7 @@
 import React from 'react';
 import './AppContentArea.css';
-import PokemonList from '../PokemonList/PokemonList';
+
+import PokemonList from '../PokemonList/PokemonList.jsx';
 
 function AppContentArea(props) {
     return (

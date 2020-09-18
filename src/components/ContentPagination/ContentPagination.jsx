@@ -1,7 +1,9 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import './ContentPagination.css';
+
+import ContentPaginationChangePageButton from '../ContentPaginationChangePageButton/ContentPaginationChangePageButton.jsx';
+
 import eventEmitter from '../../functions/eventEmitter';
-import ContentPaginationChangePageButton from '../ContentPaginationChangePageButton/ContentPaginationChangePageButton';
 import { setElementScrollPos } from '../../functions/scrollPos';
 
 function ContentPagination(props) {

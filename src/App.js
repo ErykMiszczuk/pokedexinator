@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 import './App.css';
 
-import MainMenu from './components/MainMenu/MainMenu';
-import AppContentTopBar from './components/AppContentTopBar/AppContentTopBar';
-import AppContentArea from './components/AppContentArea/AppContentArea';
+import MainMenu from './components/MainMenu/MainMenu.jsx';
+import AppContentTopBar from './components/AppContentTopBar/AppContentTopBar.jsx';
+import AppContentArea from './components/AppContentArea/AppContentArea.jsx';
 
 function App() {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import './MainMenu.css';
 
-import MenuList from '../MenuList/MenuList';
+import MenuList from '../MenuList/MenuList.jsx';
 
 function MainMenu(props) {
     return (

@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './PokemonDetails.css';
-import PokemonType from '../PokemonType/PokemonType';
-import PokemonDetailsDamageRelations from '../PokemonDetailsDamageRelations/PokemonDetailsDamageRelations';
+
+import PokemonType from '../PokemonType/PokemonType.jsx';
+import PokemonDetailsDamageRelations from '../PokemonDetailsDamageRelations/PokemonDetailsDamageRelations.jsx';
+
 import eventEmitter from '../../functions/eventEmitter';
 
 function PokemonDetails(props) {

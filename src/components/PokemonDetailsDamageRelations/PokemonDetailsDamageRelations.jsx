@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import PokemonType from '../PokemonType/PokemonType';
 import './PokemonDetailsDamageRelations.css';
+
+import PokemonType from '../PokemonType/PokemonType';
+
 import * as R from 'ramda';
 
 function PokemonDetailsDamageRelations(props) {
@@ -21,16 +23,12 @@ function PokemonDetailsDamageRelations(props) {
         // intersection of pokemon types that deal double and half damage 
         // realy deal normal damage so we need to exclude them from both sets
         let intersectDamageGained = R.intersection(t.double_damage_from, t.half_damage_from);
-        // t.double_damage_from = t.double_damage_from.filter((el) => R.find(x => x !== el, intersectDamageGained));
-        // t.half_damage_from = t.half_damage_from.filter((el) => R.find(x => x !== el, intersectDamageGained));
         t.double_damage_from = R.difference(t.double_damage_from, intersectDamageGained)
         t.half_damage_from = R.difference(t.half_damage_from, intersectDamageGained)
 
         // intersection of pokemon types that receive from our pokemon double and half damage 
         // actualy receive normal damage so like in above code we need to exclude intersected pokemon types
         let intersectDamgeDealed = R.intersection(t.double_damage_to, t.half_damage_to);
-        // t.double_damage_to = t.double_damage_to.filter((el) => R.find(x => x !== el, intersectDamgeDealed));
-        // t.half_damage_to = t.half_damage_to.filter((el) => R.find(x => x !== el, intersectDamgeDealed));
         t.double_damage_to = R.difference(t.double_damage_to, intersectDamgeDealed)
         t.half_damage_to = R.difference(t.half_damage_to, intersectDamgeDealed)
 

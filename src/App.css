@@ -18,8 +18,8 @@
   height: 100vh;
   background-color: var(--colorPrimary);
   display: grid;
-  grid-template-columns: minmax(60px, 10%) 1fr;
-  grid-template-rows: 10vh 90vh;
+  grid-template-columns: 64px 1fr;
+  grid-template-rows: 64px 90vh;
   gap: 1px 1px;
   grid-template-areas:
     "menu_left top_bar"
