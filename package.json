@@ -1,5 +1,6 @@
 {
   "name": "pokedexinator",
+  "homepage": "https://erykmiszczuk.github.io/pokedexinator/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
