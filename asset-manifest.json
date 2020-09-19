@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/pokedexinator/static/css/main.3d3a5dbe.chunk.css",
+    "main.js": "/pokedexinator/static/js/main.008b863f.chunk.js",
+    "main.js.map": "/pokedexinator/static/js/main.008b863f.chunk.js.map",
+    "runtime-main.js": "/pokedexinator/static/js/runtime-main.2ed8d586.js",
+    "runtime-main.js.map": "/pokedexinator/static/js/runtime-main.2ed8d586.js.map",
+    "static/js/2.df88c8e2.chunk.js": "/pokedexinator/static/js/2.df88c8e2.chunk.js",
+    "static/js/2.df88c8e2.chunk.js.map": "/pokedexinator/static/js/2.df88c8e2.chunk.js.map",
+    "index.html": "/pokedexinator/index.html",
+    "precache-manifest.2a1b3f9298609e5cf1fcc3d72e45d4b6.js": "/pokedexinator/precache-manifest.2a1b3f9298609e5cf1fcc3d72e45d4b6.js",
+    "service-worker.js": "/pokedexinator/service-worker.js",
+    "static/css/main.3d3a5dbe.chunk.css.map": "/pokedexinator/static/css/main.3d3a5dbe.chunk.css.map",
+    "static/js/2.df88c8e2.chunk.js.LICENSE.txt": "/pokedexinator/static/js/2.df88c8e2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2ed8d586.js",
+    "static/js/2.df88c8e2.chunk.js",
+    "static/css/main.3d3a5dbe.chunk.css",
+    "static/js/main.008b863f.chunk.js"
+  ]
+}
